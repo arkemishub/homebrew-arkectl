@@ -5,21 +5,21 @@
 class Arkectl < Formula
   desc ""
   homepage "https://github.com/arkemishub/homebrew-arkectl"
-  version "0.0.4"
+  version "0.0.5"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/arkemishub/arkectl/releases/download/v0.0.4/arkectl_Darwin_x86_64.tar.gz"
-      sha256 "88c8de715e22e098c18db2c4f9cb629e49fa741c7abfd178a2c807d91d4807c5"
+      url "https://github.com/arkemishub/arkectl/releases/download/v0.0.5/arkectl_Darwin_x86_64.tar.gz"
+      sha256 "72f4b1088685e4793feec8b7c24d4c27b04c62f75a77575d5397cd9d51128c4f"
 
       def install
         bin.install "arkectl"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/arkemishub/arkectl/releases/download/v0.0.4/arkectl_Darwin_arm64.tar.gz"
-      sha256 "3fad5a33215492f602ef4ec30cfa6b93673a917aedf80ec3b11efbe0d6ba6887"
+      url "https://github.com/arkemishub/arkectl/releases/download/v0.0.5/arkectl_Darwin_arm64.tar.gz"
+      sha256 "99a88d9073ae06a3fb34077a3e5d9cadad900ab98efdae33cd5dd65a68964278"
 
       def install
         bin.install "arkectl"
@@ -28,17 +28,17 @@ class Arkectl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/arkemishub/arkectl/releases/download/v0.0.4/arkectl_Linux_x86_64.tar.gz"
-      sha256 "3e0ca12cea3866d0f4562fbd1d19b3d728f4378a48374fe8947dc0b911bc2ae3"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/arkemishub/arkectl/releases/download/v0.0.5/arkectl_Linux_arm64.tar.gz"
+      sha256 "be54e21e4dcdbf2b4f7c7aa9fe5c35b9e6f2b475a2a1adaa637031ab5e9f0de0"
 
       def install
         bin.install "arkectl"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/arkemishub/arkectl/releases/download/v0.0.4/arkectl_Linux_arm64.tar.gz"
-      sha256 "4d548960342b13edd217ceb836eb24a93e3c706bfef8049b23b877022457a715"
+    if Hardware::CPU.intel?
+      url "https://github.com/arkemishub/arkectl/releases/download/v0.0.5/arkectl_Linux_x86_64.tar.gz"
+      sha256 "f735090ca10bf2e1cff6a051a48fb74ab50ba7cb70c50b62d2761dc2b28b50e2"
 
       def install
         bin.install "arkectl"
