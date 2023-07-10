@@ -5,21 +5,21 @@
 class Arkectl < Formula
   desc ""
   homepage "https://github.com/arkemishub/homebrew-arkectl"
-  version "0.0.7"
+  version "0.0.8"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/arkemishub/arkectl/releases/download/v0.0.7/arkectl_Darwin_arm64.tar.gz"
-      sha256 "d41f687db24d74ccffbe6f529b585c554fd17a65a86437e2de8442eef994a14a"
+    if Hardware::CPU.intel?
+      url "https://github.com/arkemishub/arkectl/releases/download/v0.0.8/arkectl_Darwin_x86_64.tar.gz"
+      sha256 "33a55e195d13d688395850e3030d28ba3e86202c28a2910cd1998bca179409c9"
 
       def install
         bin.install "arkectl"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/arkemishub/arkectl/releases/download/v0.0.7/arkectl_Darwin_x86_64.tar.gz"
-      sha256 "17b6bf1c20b1cb7c2a4d38ef6d917b227cc5b334765d6597e2e73435b76e505a"
+    if Hardware::CPU.arm?
+      url "https://github.com/arkemishub/arkectl/releases/download/v0.0.8/arkectl_Darwin_arm64.tar.gz"
+      sha256 "032e76bf3fbe6a34cdd01242395ec1e3e16aa12670afadc13068b183893ffa72"
 
       def install
         bin.install "arkectl"
@@ -29,16 +29,16 @@ class Arkectl < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/arkemishub/arkectl/releases/download/v0.0.7/arkectl_Linux_arm64.tar.gz"
-      sha256 "b994380d6bc3bcb77702897fb4a45524f7f16e8e87432c5120ddc086a49711cb"
+      url "https://github.com/arkemishub/arkectl/releases/download/v0.0.8/arkectl_Linux_arm64.tar.gz"
+      sha256 "cef484a5784d041914facbb9378a129d31cf711138505f9c80ac07d01f4bee79"
 
       def install
         bin.install "arkectl"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/arkemishub/arkectl/releases/download/v0.0.7/arkectl_Linux_x86_64.tar.gz"
-      sha256 "6cff7500bc3e38b11e520470c4aa01d8a02b040706abcd667957f86e7ce8f257"
+      url "https://github.com/arkemishub/arkectl/releases/download/v0.0.8/arkectl_Linux_x86_64.tar.gz"
+      sha256 "1b376be63caa1af77e0dfa7f0b952db23615d1ca830a3d75bbb026b0d2b50a68"
 
       def install
         bin.install "arkectl"
